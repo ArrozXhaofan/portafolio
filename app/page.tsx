@@ -8,6 +8,8 @@ export default function page() {
       font-sf font-semibold'>
         This is a text by Jean
       </h1>
+
+      <h2 className='text-white'>sdfsddhgfd</h2>
       
 
 
