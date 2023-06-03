@@ -5,13 +5,13 @@ import {useState,useEffect} from 'react'
 
 export default function Nav() {
 
-    const [claseNav, setClaseNav] = useState(['rotate-90 translate-y-2','rotate-90','-translate-y-[950px]'])
+    const [claseNav, setClaseNav] = useState(['rotate-90 translate-y-2','rotate-90','-translate-y-[1050px]'])
     const [logicNav, setLogicNav] = useState(true)
 
     function changeNav(){
 
         if (logicNav) {
-            setClaseNav(['rotate-90 absolute','rotate-90 translate-y-2','-translate-y-[950px]'])
+            setClaseNav(['rotate-90 absolute','rotate-90 translate-y-2','-translate-y-[1050px]'])
             
             setLogicNav(!logicNav)
         }
@@ -24,7 +24,7 @@ export default function Nav() {
     }
 
     useEffect(() => {
-    setClaseNav(['rotate-90 absolute','rotate-90 translate-y-2','-translate-y-[950px]'])
+    setClaseNav(['rotate-90 absolute','rotate-90 translate-y-2','-translate-y-[1050px]'])
     }, [])
     
 
@@ -47,7 +47,7 @@ export default function Nav() {
             <li className="hover:text-white duration-500 ease-in-out">Contact</li>
         </ul>
 
-        <button className="text-2xl md:hidden relative text-[#B1B1B1] flex flex-col gap-0" onClick={()=>{changeNav()}}>
+        <button className="text-2xl md:hidden relative text-[#B1B1B1] flex flex-col gap-0  z-50" onClick={()=>{changeNav()}}>
             <div className={`border border-[#B1B1B1] h-5 ${claseNav[0]} transition-all duration-500 ease-in-out`}></div>
             <div className={`border border-[#B1B1B1] h-5 ${claseNav[1]} transition-all duration-500 ease-in-out`}></div>
         </button>        
