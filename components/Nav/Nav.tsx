@@ -11,13 +11,10 @@ export default function Nav() {
     function changeNav(){
 
         if (logicNav) {
-            setClaseNav(['rotate-90 absolute','rotate-90 translate-y-2','-translate-y-[1050px]'])
-            
+            setClaseNav(['rotate-90 absolute','rotate-90 translate-y-2','-translate-y-[1050px]'])     
             setLogicNav(!logicNav)
         }
-        else{
-
-            
+        else{   
             setClaseNav(['rotate-45 absolute','-rotate-45',''])
             setLogicNav(!logicNav)
         }
@@ -48,12 +45,12 @@ export default function Nav() {
         </ul>
 
         <button className="text-2xl md:hidden relative text-[#B1B1B1] flex flex-col gap-0  z-50" onClick={()=>{changeNav()}}>
-            <div className={`border border-[#B1B1B1] h-5 ${claseNav[0]} transition-all duration-500 ease-in-out`}></div>
-            <div className={`border border-[#B1B1B1] h-5 ${claseNav[1]} transition-all duration-500 ease-in-out`}></div>
+            <div className={`border-[0.5px] rounded-full border-[#B1B1B1] h-5 ${claseNav[0]} transition-all duration-500 ease-in-out`}></div>
+            <div className={`border-[0.5px] rounded-full border-[#B1B1B1] h-5 ${claseNav[1]} transition-all duration-500 ease-in-out`}></div>
         </button>        
       </div>
 
-      <div className={`backdrop-blur-sm md:hidden absolute bg-blur-sm bg-opacity-50 bg-black h-screen w-full top-14 ${claseNav[2]} transition-all duration-700 ease-in-out`}>
+      <div className={`z-40 backdrop-blur-2xl md:hidden absolute bg-blur-sm bg-opacity-75 bg-black h-screen w-full top-14 ${claseNav[2]} transition-all duration-700 ease-in-out`}>
         <ul className="font-bold text-2xl flex flex-col gap-y-3 pl-8">
             <li className="">My Apps</li>
             <li className="">Skills & Tools</li>
