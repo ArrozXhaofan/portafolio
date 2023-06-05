@@ -59,7 +59,7 @@ export default function Subnav({data}:Props) {
             <div>
               <h2 className='font-bold text-lg'>
                 {data.title}
-              </h2>
+              </h2>5
 
 
             </div>
@@ -91,9 +91,9 @@ export default function Subnav({data}:Props) {
         <div className={`z-30 bg-opacity-75 backdrop-blur bg-black md:hidden h-24 absolute w-full ${classChevron[1]} transition-all duration-1000 ease-in-out
           flex justify-center items-center font-bold text-xl`}>
             <ul>
-              <li className="list-none text-[#B1B1B1]">Overview</li>
-              <li className="list-none text-[#B1B1B1]">Github</li>
-              <li className="list-none text-[#B1B1B1]">LinkedIn</li>
+              <li className="list-none text-[#B1B1B1]">{data.link1.name}</li>
+              <li className="list-none text-[#B1B1B1]">{data.link2.name}</li>
+              <li className="list-none text-[#B1B1B1]">{data.link3.name}</li>
             </ul>
               
         </div>
