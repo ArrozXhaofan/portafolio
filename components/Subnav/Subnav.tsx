@@ -59,7 +59,7 @@ export default function Subnav({data}:Props) {
             <div>
               <h2 className='font-bold text-lg'>
                 {data.title}
-              </h2>5
+              </h2>
 
 
             </div>
