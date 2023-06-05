@@ -1,8 +1,16 @@
 "use client"
+import Link from 'next/link';
+import { subnav } from '@/models';
 import React, { useEffect,useState } from 'react'
 import {BsChevronCompactDown} from 'react-icons/bs'
 
-export default function Subnav() {
+interface Props{
+  data: subnav
+}
+
+export default function Subnav({data}:Props) {
+
+
 
     const [scrolled, setScrolled] = useState(false);
     const [subNav, setSubNav] = useState("")
@@ -50,20 +58,20 @@ export default function Subnav() {
 
             <div>
               <h2 className='font-bold text-lg'>
-                Jeanpiere Laura
+                {data.title}
               </h2>
 
 
             </div>
            
             <ul className="hidden md:flex gap-x-7 text-sm">
-              <li className="duration-500 ease-in-out hover:text-[#B1B1B1]">Overview</li>
-              <li className="duration-500 ease-in-out hover:text-[#B1B1B1]">Github</li>
-              <li className="duration-500 ease-in-out hover:text-[#B1B1B1]">LinkedIn</li>
+              <Link href={`${data.link1.path}`} className="duration-500 ease-in-out hover:text-[#B1B1B1]">{data.link1.name}</Link>
+              <Link href={`${data.link2.path}`} className="duration-500 ease-in-out hover:text-[#B1B1B1]">{data.link2.name}</Link>
+              <Link href={`${data.link3.path}`} className="duration-500 ease-in-out hover:text-[#B1B1B1]">{data.link3.name}</Link>
               <li>
-                <button className='rounded-full text-[0.7rem] bg-blue-500 hover:bg-blue-400 px-3 py-0'>
-                  Download CV
-                </button>
+                <Link href={`${data.enlace.path}`} className='rounded-full text-[0.7rem] bg-blue-500 hover:bg-blue-400 px-3 py-0'>
+                  {data.enlace.name}
+                </Link>
               </li>
             </ul>
 

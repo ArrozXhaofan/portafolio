@@ -2,6 +2,7 @@
 
 import { AiFillApple } from "react-icons/ai";
 import {useState,useEffect} from 'react'
+import Link from "next/link";
 
 export default function Nav() {
 
@@ -18,6 +19,10 @@ export default function Nav() {
             setClaseNav(['rotate-45 absolute','-rotate-45',''])
             setLogicNav(!logicNav)
         }
+    }
+
+    function upNav(){
+      setClaseNav(['rotate-90 absolute','rotate-90 translate-y-2','-translate-y-[1050px]']) 
     }
 
     useEffect(() => {
@@ -38,10 +43,10 @@ export default function Nav() {
         </div>
 
         <ul className="hidden md:flex gap-x-7">
-            <li className="hover:text-white duration-500 ease-in-out">My Apps</li>
-            <li className="hover:text-white duration-500 ease-in-out">Skills & Tools</li>
-            <li className="hover:text-white duration-500 ease-in-out">Xperience</li>
-            <li className="hover:text-white duration-500 ease-in-out">Contact</li>
+            <Link href={'/'} className="hover:text-white duration-500 ease-in-out">My Apps</Link>
+            <Link href={'/'} className="hover:text-white duration-500 ease-in-out">Skills & Tools</Link>
+            <Link href={'/xperience'}  className="hover:text-white duration-500 ease-in-out">Xperience</Link>
+            <Link href={'/'}  className="hover:text-white duration-500 ease-in-out">Contact</Link>
         </ul>
 
         <button className="text-2xl md:hidden relative text-[#B1B1B1] flex flex-col gap-0  z-50" onClick={()=>{changeNav()}}>
@@ -50,12 +55,12 @@ export default function Nav() {
         </button>        
       </div>
 
-      <div className={`z-40 backdrop-blur-2xl md:hidden absolute bg-blur-sm bg-opacity-75 bg-black h-screen w-full top-14 ${claseNav[2]} transition-all duration-700 ease-in-out`}>
-        <ul className="font-bold text-2xl flex flex-col gap-y-3 pl-8">
-            <li className="">My Apps</li>
-            <li className="">Skills & Tools</li>
-            <li className="">Xperience</li>
-            <li className="">Contact</li>
+      <div className={`z-40 backdrop-blur-2xl md:hidden fixed bg-blur-sm bg-opacity-75 bg-black h-screen w-full top-14 ${claseNav[2]} transition-all duration-700 ease-in-out`}>
+        <ul className="font-bold text-2xl absolute flex-col gap-y-3 pl-8">
+            <li><Link href={''} onClick={()=>{upNav()}} className="">My Apps</Link></li>
+            <li><Link href={''} onClick={()=>{upNav()}} className="">Skills & Tools</Link></li>
+            <li><Link href={'/xperience'} onClick={()=>{upNav()}} className="">Xperience</Link></li>
+            <li><Link href={''} onClick={()=>{upNav()}} className="">Contact</Link></li>
         </ul>
       </div>
     </nav>

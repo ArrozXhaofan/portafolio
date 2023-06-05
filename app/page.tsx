@@ -1,9 +1,32 @@
-import React from 'react'
+import { Subnav } from "@/components"
 
 export default function page() {
-  return (
-    <div className=' min-h-screen bg-black'>
 
+  const datos = {
+    title: 'Jeanpiere Laura',
+    link1:{
+      name:'Overview',
+      path:'/'
+    },
+    link2: {
+      name:'Github',
+      path:'/'
+  },
+  link3: {
+      name:'Linkdln',
+      path:'/'
+  },
+  enlace: {
+      name:'Download CV',
+      path:'/'
+  }
+  }
+
+
+  return (
+    <>
+
+      <Subnav data={datos} />
 
       
       <div className='h-screen bg-red-500'>
@@ -16,6 +39,6 @@ export default function page() {
         fsd
       </div>
 
-    </div>
+    </>
   )
 }
